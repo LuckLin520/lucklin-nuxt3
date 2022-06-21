@@ -7,7 +7,7 @@ export const useUserStore = defineStore('user', {
   },
   actions: {
     async login(payload: object) {
-      const { _data } = await useFetch<ZcResponse>('/account/login', { method: 'POST', payload })
+      const { _data } = await useMyFetch<ZcResponse>('/account/login', { method: 'POST', body: payload })
       if (_data.status) {
         this.token = _data.data.header_token
       }

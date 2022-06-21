@@ -7,7 +7,7 @@
     <button @click="user.token = '998'">change token</button>
     <nuxt-link to="/default">go default</nuxt-link>
 
-    <button @click="onLogin">登录</button>
+    <button @click="onRefresh">登录</button>
   </div>
 </template>
 
@@ -18,12 +18,18 @@ definePageMeta({
 const user = useUserStore()
 const showTest = ref(false)
 
-function onLogin() {
-  user.login({
+const { pending, refresh, error } = await useAsyncData('login', () => {
+  return user.login({
     userAccount: '15348298177',
     userPwd: 'a123123',
     userType: 0
   })
+})
+
+const onRefresh = async () => {
+  console.log('idnex', process.env.NODE_ENV)
+  await refresh()
+  console.log(user.token)
 }
 </script>
 

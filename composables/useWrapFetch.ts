@@ -1,3 +1,5 @@
+import type { UseFetchOptions } from '#app'
+
 /* eslint-disable */
 export const useWrapFetch: typeof useFetch = (url, options) => {
   return useFetch(url, {
@@ -20,6 +22,10 @@ export const useWrapFetch: typeof useFetch = (url, options) => {
     onResponseError({ request, response, options }) {
       // 处理响应错误
       console.log('res error')
+      ElMessage({
+        message: '服务端异常',
+        type: 'warning'
+      })
     }
   })
 }

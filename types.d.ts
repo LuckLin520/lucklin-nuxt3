@@ -1,6 +1,6 @@
-declare interface IResponse {
+declare interface IRes<T = object> {
   code: string
-  status: boolean
   msg: string
-  data: object
+  success: boolean
+  data: T
 }

@@ -4,23 +4,16 @@
     <el-button type="primary">主要按钮</el-button>
     <el-icon-plus :style="{ width: 20 }" />
 
-    <client-only>
-      <el-button @click="toggleDark()"> {{ isDark ? '关闭' : '开启' }}</el-button>
-    </client-only>
-
-    <p>{{ userStore.token }}</p>
+    <el-button @click="onEnquiry()"> 询价</el-button>
   </div>
 </template>
 
 <script setup lang="ts">
-import { useDark, useToggle } from '@vueuse/core'
-
-const userStore = useUserStore()
-await sleep(1000)
-userStore.login(123)
-
-const isDark = useDark()
-const toggleDark = useToggle(isDark)
+const onEnquiry = async () => {
+  const body = { phone: '13812345678' }
+  const res = await useWrapFetch<IRes>('/api/enquiry', { method: 'POST', body })
+  console.log(res)
+}
 </script>
 
 <style lang="scss" scoped></style>

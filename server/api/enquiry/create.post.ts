@@ -1,5 +1,5 @@
 import { useError } from 'nuxt/app'
-import { ServerCache } from '~/utils/serverUtil'
+import { ServerCache } from '~/server/utils/serverUtil'
 import { QYWX_getAccessToken, QYWX_sendMessage, SecretTypeEnum, QYWX_config } from '~/utils/thirdparty'
 
 export default defineEventHandler(async event => {

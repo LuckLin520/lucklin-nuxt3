@@ -1,6 +1,13 @@
 declare interface IRes<T = object> {
-  code: string
-  msg: string
+  code: number
+  msg?: string
   success: boolean
-  data: T
+  data?: T
+}
+declare interface IPage<T = object> {
+  current: number
+  size: number
+  pages: number
+  total: boolean
+  records: T[]
 }

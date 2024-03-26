@@ -1,9 +1,11 @@
 import type { UseFetchOptions } from '#app'
 
 /* eslint-disable */
-export const useWrapFetch: typeof useFetch = (url, options) => {
-  return useFetch(url, {
-    ...options,
+type Param1Type = typeof useFetch extends (param1: infer P1, param2: any) => any ? P1 : never;
+type Param2Type = typeof useFetch extends (param1: any, param2: infer P2) => any ? P2 : never;
+export const useWrapFetch = <T = any>(url: Param1Type, options: Param2Type) => {
+  return useFetch<IRes<T>>(url, {
+    ...options as any,
     onRequest({ request, options }) {
       console.log('req')
       const headers = {
@@ -18,6 +20,12 @@ export const useWrapFetch: typeof useFetch = (url, options) => {
     onResponse({ request, response, options }) {
       // 处理响应数据
       console.log('res')
+      if (!response._data.success) {
+        ElMessage({
+          message: response._data.msg,
+          type: 'warning'
+        })
+      }
     },
     onResponseError({ request, response, options }) {
       // 处理响应错误

@@ -3,8 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
+    "build:test": "nuxt build --dotenv .env.test",
+    "dev": "nuxt dev --dotenv .env.development",
     "generate": "nuxt generate",
     "start": "node ./.output/server/index.mjs",
     "preview": "nuxt preview",

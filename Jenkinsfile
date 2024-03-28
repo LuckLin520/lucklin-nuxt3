@@ -27,7 +27,7 @@ node {
                     sshTransfer(
                         cleanRemote: true, 
                         excludes: '', 
-                        execCommand: "docker load -i /docker_images/${appName}.tar && docker run -d -p 3000:3000 ${imageName}", // 在服务器上加载和运行镜像的命令
+                        execCommand: "docker load -i /docker_images/${appName}.tar && docker run --name ${appName} -d -p 3000:3000 ${imageName}", // 在服务器上加载和运行镜像的命令
                         execTimeout: 120000, 
                         flatten: false, 
                         makeEmptyDirs: false, 

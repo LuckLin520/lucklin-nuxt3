@@ -1,4 +1,4 @@
-export const useUserStore = defineStore('user', {
+export default defineStore('user', {
   state() {
     return {
       token: '5556666'

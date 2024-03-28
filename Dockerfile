@@ -9,9 +9,9 @@ WORKDIR /app
 COPY . /app
 
 # 安装依赖项并构建应用程序
-RUN npm install pnpm -g --registry https://registry.npmmirror.com  && \
-    pnpm install && \
-    pnpm build
+RUN npm install pnpm -g --registry https://registry.npmmirror.com
+RUN pnpm install --registry https://registry.npmmirror.com
+RUN pnpm build
 
 # 暴露端口
 EXPOSE 3000

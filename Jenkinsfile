@@ -15,7 +15,7 @@ node {
             def imageName = "${appName}:latest"
     
             // 构建Docker镜像
-            sh "docker build -t ${imageName} ."
+            sh "docker build --build-arg BUILD_ENV=test --build-arg BUILD_PORT=3000 -t ${imageName} ."
     
             // 将Docker镜像保存为tar文件
             sh "docker save -o ${appName}.tar ${imageName}"

@@ -7,7 +7,7 @@ export default defineNuxtConfig({
       meta: [{ name: 'google', content: `notranslate` }]
     }
   },
-  modules: ['@element-plus/nuxt', '@pinia/nuxt'],
+  modules: ['@element-plus/nuxt', '@pinia/nuxt', '@nuxtjs/sitemap', 'nuxt-simple-robots'],
   vite: {
     css: {
       preprocessorOptions: {
@@ -30,5 +30,13 @@ export default defineNuxtConfig({
     public: {
       apiBase: process.env.NUXT_PUBLIC_API_BASE
     }
+  },
+  sitemap: {
+    enabled: true,
+    autoLastmod: true
+  },
+  robots: {},
+  site: {
+    indexable: process.env.NUXT_ENV === 'test'
   }
 })

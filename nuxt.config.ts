@@ -7,7 +7,7 @@ export default defineNuxtConfig({
       meta: [{ name: 'google', content: `notranslate` }]
     }
   },
-  modules: ['@element-plus/nuxt', '@pinia/nuxt', '@nuxtjs/sitemap', 'nuxt-simple-robots'],
+  modules: ['@element-plus/nuxt', 'nuxt-icon', '@pinia/nuxt', '@nuxtjs/sitemap', 'nuxt-simple-robots'],
   vite: {
     css: {
       preprocessorOptions: {
@@ -18,7 +18,6 @@ export default defineNuxtConfig({
     }
   },
   elementPlus: {
-    icon: 'el-icon',
     importStyle: 'scss',
     themes: ['dark']
   },

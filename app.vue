@@ -18,8 +18,4 @@ useSeoMeta({
   keywords: 'Nuxt 3, TypeScript, Tailwind CSS'
 })
 </script>
-<style lang="scss">
-svg {
-  width: 20px;
-}
-</style>
+<style lang="scss"></style>

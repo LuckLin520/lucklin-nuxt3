@@ -1,6 +1,6 @@
 <template>
-  <div>about</div>
-  <div id="mapDiv" style="position: absolute; width: 1400px; height: 500px"></div>
+  <div class="abouts"><div class="testaa">456</div></div>
+  <div id="mapDiv" style="width: 1440px; height: 500px"></div>
 </template>
 
 <script setup lang="ts">
@@ -48,4 +48,7 @@ onMounted(async () => {
 })
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.abouts {
+}
+</style>

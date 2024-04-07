@@ -1,9 +1,7 @@
 <template>
   <NuxtLoadingIndicator />
   <el-config-provider :locale="zhCn">
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
+    <NuxtLayout name="tbb" />
   </el-config-provider>
 </template>
 
@@ -16,4 +14,3 @@ useSeoMeta({
   keywords: 'Nuxt 3, TypeScript, Tailwind CSS'
 })
 </script>
-<style lang="scss"></style>

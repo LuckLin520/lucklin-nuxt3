@@ -12,7 +12,7 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: `@use "@/assets/css/element-variables.scss" as element;`
+          additionalData: `@use "@/assets/css/custom-variables.scss" as *; @use "@/assets/css/element-variables.scss" as element;`
         }
       }
     }
@@ -21,6 +21,7 @@ export default defineNuxtConfig({
     importStyle: 'scss',
     themes: ['dark']
   },
+  css: ['@/assets/css/app.scss'],
   devServer: {
     host: '0.0.0.0',
     port: 3000

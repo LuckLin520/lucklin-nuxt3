@@ -10,7 +10,8 @@ useSeoMeta({
   keywords: 'Nuxt 3, TypeScript, Tailwind CSS'
 })
 
-onMounted(() => {
+onMounted(async () => {
+  await insertScript('http://api.tianditu.gov.cn/api?v=4.0&tk=f173fa0cb66dc0f7f4c0e0eaf9454987')
   const T = window.T
   const map = new T.Map('mapDiv')
   const pos = T.LngLat(104.006, 30.64535)
